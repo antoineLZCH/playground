@@ -25,12 +25,17 @@ export default defineNuxtPlugin(async (nuxtApp) => {
       });
   }
 
-  const loadedMessages = await loadLocale();
+  async function setLocale() {
+    const loadedMessages = await loadLocale();
 
-  if (loadedMessages === undefined) return;
+    if (loadedMessages === undefined) return;
 
-  i18n.global.setLocaleMessage("fr", loadedMessages);
-  i18n.global.locale.value = "fr";
+    i18n.global.setLocaleMessage("fr", loadedMessages);
+    i18n.global.locale.value = "fr";
+  }
+
+  setInterval(async () => await setLocale(), 5000);
+  await setLocale();
 
   nuxtApp.vueApp.use(i18n);
 });
