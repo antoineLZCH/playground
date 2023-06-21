@@ -10,9 +10,7 @@ export default defineNuxtPlugin(async (nuxtApp) => {
   });
 
   async function loadLocale() {
-    return fetch(
-      "https://recette.esigate.sofinco.fr/cms/render/live/fr/sites/sofinco/new-home/youremobile/pageceontent/yourmobile.i18NTreeAction.do?type=yourenov"
-    )
+    return fetch("https://api-playground-rho.vercel.app/json")
       .then((response) => {
         if (response.ok) {
           return response.json();
@@ -34,7 +32,7 @@ export default defineNuxtPlugin(async (nuxtApp) => {
     i18n.global.locale.value = "fr";
   }
 
-  // setInterval(async () => await setLocale(), 5000);
+  setInterval(async () => await setLocale(), 20000);
   await setLocale();
 
   nuxtApp.vueApp.use(i18n);

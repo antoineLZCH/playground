@@ -1,7 +1,7 @@
 <template>
   <main>
     <h1>Coucou</h1>
-    {{ $t('fr.news.carousel_title') }}
+    {{ $t('fr.news.new_slide') }}
   </main>
 </template>
 
