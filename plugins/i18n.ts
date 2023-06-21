@@ -32,7 +32,7 @@ export default defineNuxtPlugin(async (nuxtApp) => {
     i18n.global.locale.value = "fr";
   }
 
-  setInterval(async () => await setLocale(), 20000);
+  // setInterval(async () => await setLocale(), 20000);
   await setLocale();
 
   nuxtApp.vueApp.use(i18n);
