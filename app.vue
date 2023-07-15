@@ -1,7 +1,6 @@
 <template>
   <main>
-    <h1>Coucou</h1>
-    {{ $t('fr.news.new_slide') }}
+    <NuxtPage/>
   </main>
 </template>
 
@@ -9,3 +8,10 @@
 import 'vue3-marquee/dist/style.css'
 
 </script>
+
+
+<style>
+main {
+  height: 100vh;
+}
+</style>

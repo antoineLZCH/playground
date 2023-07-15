@@ -9,31 +9,31 @@ export default defineNuxtPlugin(async (nuxtApp) => {
     messages: messages,
   });
 
-  async function loadLocale() {
-    return fetch("https://api-playground-rho.vercel.app/json")
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        }
-
-        throw new Error("Something went wrong");
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }
-
-  async function setLocale() {
-    const loadedMessages = await loadLocale();
-
-    if (loadedMessages === undefined) return;
-
-    i18n.global.setLocaleMessage("fr", loadedMessages);
-    i18n.global.locale.value = "fr";
-  }
-
-  // setInterval(async () => await setLocale(), 20000);
-  await setLocale();
+  // async function loadLocale() {
+  //   return fetch("https://api-playground-rho.vercel.app/json")
+  //     .then((response) => {
+  //       if (response.ok) {
+  //         return response.json();
+  //       }
+  //
+  //       throw new Error("Something went wrong");
+  //     })
+  //     .catch((error) => {
+  //       console.error(error);
+  //     });
+  // }
+  //
+  // async function setLocale() {
+  //   const loadedMessages = await loadLocale();
+  //
+  //   if (loadedMessages === undefined) return;
+  //
+  //   i18n.global.setLocaleMessage("fr", loadedMessages);
+  //   i18n.global.locale.value = "fr";
+  // }
+  //
+  // // setInterval(async () => await setLocale(), 20000);
+  // await setLocale();
 
   nuxtApp.vueApp.use(i18n);
 });

@@ -3,6 +3,7 @@ import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "url";
 
 export default defineNuxtConfig({
+  modules: ['@vueuse/nuxt'],
   devtools: { enabled: true },
   alias: {
     "@": fileURLToPath(new URL("./src", import.meta.url)),
@@ -20,5 +21,5 @@ export default defineNuxtConfig({
         strictMessage: false,
       }),
     ],
-  },
+  }
 });
