@@ -22,6 +22,7 @@
   "dependencies": {
     "@vue-leaflet/vue-leaflet": "^0.10.1",
     "leaflet": "^1.9.4",
+    "leaflet-geosearch": "^3.8.0",
     "leaflet.markercluster": "^1.5.3",
     "vue-i18n": "^9.2.2",
     "vue-leaflet-markercluster": "^0.4.0",
